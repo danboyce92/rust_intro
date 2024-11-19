@@ -32,3 +32,35 @@ Add the -q flag to just run the project and avoid receiving any debugging messag
 cargo run -q
 ```
 
+
+
+### Inherent Implementations
+There are two types of functions to be aware of in Inherent Implementations.
+
+**Associated Functions**
+```
+impl Deck {
+    fn new() -> Self {
+        //code..
+    }
+}
+
+fn main() {
+    Deck::new();
+}
+```
+Use when you have functionality not tied to a specific instance
+<br/>
+
+**Methods**
+```
+impl Deck {
+    fn shuffle(&self) {
+        //code..
+    }
+}
+
+fn main() {
+    deck.shuffle();
+}
+```
