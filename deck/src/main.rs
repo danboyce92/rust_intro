@@ -4,14 +4,10 @@ struct Deck {
     cards: Vec<String>,
 }
 
-
-
 fn main() {
-    let suits = ["hearts", "spades", "diamonds", "clubs"];
-    let values = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"];
-    let cards = vec![];
-    
-    let deck = Deck { cards: vec![] };
+    let suits = ["hearts", "spades", "diamonds"];
+    let values = ["Ace", "Two", "Three"];
+    let mut cards = vec![];
 
     for suit in suits {
         for value in values {
@@ -20,5 +16,7 @@ fn main() {
         }
     }
 
-    println!("Here's your deck: {:?}", deck);
+    let deck = Deck { cards };
+
+    println!("Here's your deck: {:#?}", deck);
 }
