@@ -4,6 +4,7 @@ struct Deck {
     cards: Vec<String>,
 }
 
+//Called an Inherent Implementation
 impl Deck {
     fn new() -> Self {
         let suits = ["hearts", "spades", "diamonds"];
