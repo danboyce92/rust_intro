@@ -64,3 +64,23 @@ fn main() {
     deck.shuffle();
 }
 ```
+Use when you need to read or change fields in a specific instance
+
+
+
+### Implicit Returns
+**If you remove the ; from the final expression of a function it will automatically be returned**
+
+This 
+```
+fn is_even(num: i32) -> bool {
+    return num % 2 == 0;
+}
+```
+
+Is the same as 
+```
+fn is_even(num: i32) -> bool {
+    num % 2 == 0
+}
+```

@@ -1,3 +1,5 @@
+use rand::{thread_rng, seq::SliceRandom};
+
 #[derive(Debug)]
 
 struct Deck {
@@ -18,8 +20,12 @@ impl Deck {
             }
         }
     
-        let deck = Deck { cards };
-        return deck;
+        Deck { cards }
+        
+    }
+
+    fn shuffle(&self) {
+
     }
 }
 
