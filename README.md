@@ -89,7 +89,7 @@ fn is_even(num: i32) -> bool {
 ## 12 Rules of Ownership, Borrowing & Lifetimes
 
 ### Ownership
-1. Every value is 'owned' by a single variable, argument, struct, vector, etc at a time <br/>
+1. Every value is 'owned' by a single variable, argument, struct, vector, etc at a time. <br/>
 2. Reassigning the value to a variable, passing it to a function, putting it into a vector, etc, moves the value. The old owner can't be used to access the value anymore. <br/>
 ### Borrowing
 3. You can create many read-only references to a value that exists at the same time. These refs can all exist at the same time. <br/>
@@ -101,6 +101,16 @@ fn is_even(num: i32) -> bool {
 8. When an owner goes out of scope, the value owned by it is dropped(cleaned up in memory). <br/>
 9. There can't be references to a value when its owner goes out of scope. <br/>
 10. References to a value can't outlive the value they refer to.
-
+### Remember!
 11. **These rules will dramatically change how you write code(compared to other languages)** <br/>
 12. **When in doubt, remember that Rust wants to minimize unexpected updates to data.** <br/>
+
+
+### Argument types
+*Tips on choosing the correct argument types*
+
+1. If you need to store the argument somewhere - Favor taking ownership(receive a value). <br/>
+2. If you need to do a calculation with the value - Favor receiving a read-only ref. <br/>
+3. If you need to change the value in some way - Favor receiving a mutable ref. <br/>
+
+**These rules are not absolute!!!**
