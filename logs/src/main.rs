@@ -14,6 +14,13 @@ fn main() {
         }
     }
 
+    match validate_email(String::from("sdfjnfds@ksdf")) {
+        Ok(..) => println!("email is valid"),
+        Err(reason_this_failed_validation) => {
+            println!("{}", reason_this_failed_validation)
+        }
+    }
+
 }
 
 fn validate_email(email: String) -> Result<(), Error>{
