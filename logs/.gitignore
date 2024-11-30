@@ -6,3 +6,5 @@
 
 # If you use Cargo.lock for binary projects
 Cargo.lock
+
+logs.txt
