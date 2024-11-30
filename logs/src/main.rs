@@ -16,6 +16,13 @@ fn main() {
 
 }
 
+fn validate_email(email: String) -> Result<(), Error>{
+    if email.contains("@") {
+        Ok(())
+    } else {
+        Err(Error::other("emails must have an @"))
+    }
+}
 
 fn divide(a: f64, b: f64) -> Result<f64, Error> {
     if b == 0.0 {
