@@ -2,13 +2,20 @@ use std::fs;
 use std::io::Error;
 
 fn main() {
-    let text = fs::read_to_string("logs.txt");
+    match fs::read_to_string("logs.txt") {
+        Ok(text_that_was_read) => {
+            println!("{}", text_that_was_read.len())
+        }
+        Err(why_this_failed) => {
+            println!("Failed to read file: {}", why_this_failed)
+        }
+    }
 
-    // println!("{:#?}", text);
+    /*
     match divide(5.0, 2.0) {
         Ok(results_of_division) => {
             println!("{}", results_of_division)
-        } 
+        }
         Err(what_went_wrong) => {
             println!("{}", what_went_wrong);
         }
@@ -21,8 +28,10 @@ fn main() {
         }
     }
 
+    */
 }
 
+/*
 fn validate_email(email: String) -> Result<(), Error>{
     if email.contains("@") {
         Ok(())
@@ -38,3 +47,4 @@ fn divide(a: f64, b: f64) -> Result<f64, Error> {
         Ok(a / b)
     }
 }
+    */
